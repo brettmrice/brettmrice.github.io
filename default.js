@@ -59,12 +59,14 @@ function draw_hour() {
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   translate(windowWidth/2, windowHeight/2);
+  stroke(255);
+  fill(255);
+  background(0);
   for(i = 0; i < 60; i++) {
     if(i != 0) {
       rotate((TWO_PI/60)+PI);
     }
     if(i%5 == 0) {
-      stroke(0);
       strokeWeight(18);
       rect(0, 0, 0, max(windowWidth, windowHeight));
     } else {
