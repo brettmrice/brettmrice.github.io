@@ -1,27 +1,31 @@
-var value = 0;
+value = 0;
+mode_1 = 255;
+mode_2 = 0;
+count = 0;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  //frameRate(10);
 }
 
 function draw() {
   if(value == 255) {
-    //background(value);
-    fill(0);
-    noStroke();
-    ellipse(windowWidth/2, windowHeight/2, min(windowWidth, windowHeight)*(2/2.1), min(windowWidth, windowHeight)*(2/2.1));
 
-    h = hour();
-    m = minute();
-    s = second();
+    h = hour(); m = minute(); s = second();
 
-    stroke(0);
-    draw_second();
-    draw_minute();
-    draw_hour();
+    stroke(mode_2);
+    if(s != s_old) {
+      fill(mode_2);
+      noStroke();
+      ellipse(windowWidth/2, windowHeight/2,
+        min(windowWidth, windowHeight)*(2/2.1),
+        min(windowWidth, windowHeight)*(2/2.1));
+      draw_second();
+      draw_minute();
+      draw_hour();
+    }
 
-    stroke(255);
+    s_old = s;
+    stroke(mode_1);
     ellipse(windowWidth/2, windowHeight/2, 20, 20);
   } else {
     clear();
@@ -31,7 +35,7 @@ function draw() {
 function draw_second() {
   translate(windowWidth/2, windowHeight/2);
   rotate(((TWO_PI/60)*s)+PI);
-  stroke(255);
+  stroke(mode_1);
   strokeWeight(3);
   rect(0, 0, 0, min(windowWidth, windowHeight)/2.3);
   rotate((-(TWO_PI/60)*s)+PI);
@@ -59,9 +63,9 @@ function draw_hour() {
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   translate(windowWidth/2, windowHeight/2);
-  stroke(255);
-  fill(255);
-  background(0);
+  stroke(mode_1);
+  fill(mode_1);
+  background(mode_2);
   for(i = 0; i < 60; i++) {
     if(i != 0) {
       rotate((TWO_PI/60)+PI);
@@ -74,31 +78,53 @@ function windowResized() {
       rect(0, 0, 0, max(windowWidth, windowHeight));
     }
   }
+  s_old = 61;
+  translate(-windowWidth/2, -windowHeight/2);
+  fill(mode_2);
+  noStroke();
+  ellipse(windowWidth/2, windowHeight/2,
+    min(windowWidth, windowHeight)*(2/2.1),
+    min(windowWidth, windowHeight)*(2/2.1));
 }
 
-function mousePressed() {
-  if (value == 0) {
-    value = 255;
-
+function mouseClicked() {
+  if(mouseButton == LEFT) {
+    if(count == 0) {
+      value = 255;
+      count += 1;
+    } else if(count == 1) {
+      value = 255;
+      count += 1;
+      mode_1 = 0;
+      mode_2 = 255;
+    } else if(count == 2) {
+      value = 0;
+      count = 0;
+      mode_1 = 255;
+      mode_2 = 0;
+    }
     translate(windowWidth/2, windowHeight/2);
-    stroke(255);
-    fill(255);
-    background(0);
+    stroke(mode_1);
+    fill(mode_1);
+    background(mode_2);
     for(i = 0; i < 60; i++) {
       if(i != 0) {
         rotate((TWO_PI/60)+PI);
       }
       if(i%5 == 0) {
         strokeWeight(18);
-        //rect(0, 9+min(windowWidth, windowHeight)/2.1, 0, max(windowWidth, windowHeight));
         rect(0, 0, 0, max(windowWidth, windowHeight));
       } else {
         strokeWeight(2);
-        //rect(0, min(windowWidth, windowHeight)/2.1, 0, max(windowWidth, windowHeight));
         rect(0, 0, 0, max(windowWidth, windowHeight));
       }
     }
-  } else {
-    value = 0;
+    s_old = 61;
+    translate(-windowWidth/2, -windowHeight/2);
+    fill(mode_2);
+    noStroke();
+    ellipse(windowWidth/2, windowHeight/2,
+      min(windowWidth, windowHeight)*(2/2.1),
+      min(windowWidth, windowHeight)*(2/2.1));
   }
 }
