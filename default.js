@@ -5,6 +5,7 @@ count = 0;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  //noCursor();
 }
 
 function draw() {
@@ -22,14 +23,17 @@ function draw() {
       draw_second();
       draw_minute();
       draw_hour();
+      fill(mode_1);
+      ellipse(windowWidth/2, windowHeight/2, 20, 20);
     }
 
     s_old = s;
-    stroke(mode_1);
-    ellipse(windowWidth/2, windowHeight/2, 20, 20);
+
   } else {
     clear();
   }
+  //fill()
+  //quad()
 }
 
 function draw_second() {
