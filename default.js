@@ -16,7 +16,11 @@ function setup() {
   max_x_img = windowWidth;
   max_y_img = windowHeight;
   mil = millis();
+<<<<<<< HEAD
+  //background(0);
+=======
   background(0);
+>>>>>>> e354980ee51ac63f13aa91e5e1e48834969ccc39
 }
 
 function draw() {
@@ -24,7 +28,11 @@ function draw() {
     draw_clock();
   } else {
     //clear();
+<<<<<<< HEAD
+    //draw_galaxy_ripples();
+=======
     draw_galaxy_ripples();
+>>>>>>> e354980ee51ac63f13aa91e5e1e48834969ccc39
   }
 }
 
@@ -68,6 +76,36 @@ function draw_clock() {
   //}
   //s_old = s;
   //m_old = m;
+<<<<<<< HEAD
+}
+
+function draw_clock_background() {
+  translate(windowWidth/2, windowHeight/2);
+  stroke(mode_1);
+  fill(mode_1);
+  background(mode_2);
+  for(i = 0; i < 60; i++) {
+    if(i != 0) {
+      rotate((TWO_PI/60)+PI);
+    }
+    if(i%5 == 0) {
+      strokeWeight(18);
+      rect(0, 0, 0, max(windowWidth, windowHeight));
+    } else {
+      strokeWeight(2);
+      rect(0, 0, 0, max(windowWidth, windowHeight));
+    }
+  }
+  s_old = 61;
+  translate(-windowWidth/2, -windowHeight/2);
+  fill(mode_2);
+  noStroke();
+  ellipse(windowWidth/2, windowHeight/2,
+    min(windowWidth, windowHeight)*(2/2.1),
+    min(windowWidth, windowHeight)*(2/2.1));
+    //count += 1;
+=======
+>>>>>>> e354980ee51ac63f13aa91e5e1e48834969ccc39
 }
 
 function draw_second() {
@@ -136,17 +174,35 @@ function mouseClicked() {
   if(mouseButton == LEFT) {
     if(count == 0) { // draw dark clock
       value = 1; // draw clock
+<<<<<<< HEAD
+      count += 1;
+      mode_1 = 255;
+      mode_2 = 0;
+      draw_clock_background()
+    } else if(count == 1) { // draw bright clock
+      value = 1; // draw clock
+=======
+>>>>>>> e354980ee51ac63f13aa91e5e1e48834969ccc39
       count += 1;
     } else if(count == 1) { // draw bright clock
       value = 1; // draw clock
       //count += 1;
       mode_1 = 0;
       mode_2 = 255;
+<<<<<<< HEAD
+      draw_clock_background()
+=======
+>>>>>>> e354980ee51ac63f13aa91e5e1e48834969ccc39
     } else if(count == 2) { // clear all drawings
       value = 0;
       //count = 0;
       mode_1 = 255;
       mode_2 = 0;
+<<<<<<< HEAD
+      clear();
+      //background(0);
+    }
+=======
       background(0);
     }
     if(count < 2) {
@@ -175,5 +231,6 @@ function mouseClicked() {
         min(windowWidth, windowHeight)*(2/2.1));
       count += 1;
       }
+>>>>>>> e354980ee51ac63f13aa91e5e1e48834969ccc39
   }
 }
