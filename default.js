@@ -3,6 +3,7 @@ mode_1 = 255;
 mode_2 = 0;
 count = 0;
 s_old = 61;
+sec_hand_count = 0;
 
 x_pos = [];
 y_pos = [];
@@ -105,11 +106,19 @@ function draw_second() {
     s_old = s;
   }
   rotate(((TWO_PI/60)*(s+mil_int))+PI);
-  stroke(mode_1);
+  if (sec_hand_count < 300) {
+    stroke_alpha = map(sec_hand_count, 0, 300, 0, 255);
+    stroke(mode_1, stroke_alpha);
+    sec_hand_count++;
+  } else {
+    stroke(mode_1);
+  }
+  //stroke(mode_1);
   strokeWeight(3);
   rect(0, 0, 0, min(windowWidth, windowHeight)/2.3);
   rotate(-(((TWO_PI/60)*(s+mil_int))+PI));
   translate(-windowWidth/2, -windowHeight/2);
+  stroke(mode_1);
 }
 
 function draw_minute() {
@@ -153,6 +162,7 @@ function mouseClicked() {
       mode_2 = 0;
       draw_clock_background()
       loop();
+      sec_hand_count = 0;
     } else if(count == 1) { // draw bright clock
       value = 1; // draw clock
       count += 1;
@@ -160,6 +170,7 @@ function mouseClicked() {
       mode_2 = 255;
       draw_clock_background()
       loop();
+      sec_hand_count = 0;
     } else if(count == 2) { // clear all drawings
       value = 0;
       count = 0;
