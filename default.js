@@ -257,7 +257,7 @@ function mouseClicked() {
 }
 */
 function touchStarted() {
-  if(mouseButton == LEFT) {
+  //if(mouseButton == LEFT) {
     if(count == 0) { // draw dark clock
       value = 1; // draw clock
       count += 1;
@@ -287,5 +287,6 @@ function touchStarted() {
       gal_count = 0;
       loop();
     }
-  }
+  //}
+  return false;
 }
