@@ -44,7 +44,7 @@ function draw_galaxy_ripples() {
   num_gal_rings = round(random(2, 4));
   for(j = 0; j < gal_width; j++) {
     ring_opac = sin(pow(PI, num_gal_rings)/(j));
-    stroke(255, (randomGaussian()*100) * ring_opac);
+    stroke(mode_1, (randomGaussian()*100) * ring_opac);
     ellipse(x_pos, y_pos, j, j);
   }
   fill(0, 200, 0);
@@ -256,7 +256,7 @@ function mouseClicked() {
   }
 }
 */
-function touchStarted() {
+/*function touchStarted() {
   //if(mouseButton == LEFT) {
     if(count == 0) { // draw dark clock
       value = 1; // draw clock
@@ -283,10 +283,56 @@ function touchStarted() {
       noStroke();
       noFill();
       clear();
-      background(0);
+      background(mode_2);
       gal_count = 0;
       loop();
     }
   //}
+  return false;
+}
+*/
+function touchStarted() {
+  //if(mouseButton == LEFT) {
+    if(count == 0) { // draw dark clock
+      value = 1; // draw clock
+      count += 1;
+      mode_1 = 255;
+      mode_2 = 0;
+      draw_clock_background()
+      loop();
+      sec_hand_count = 0;
+    } else if(count == 1) { // draw dark draw_galaxy_ripples
+      value = 0;
+      count += 1;
+      mode_1 = 0;
+      mode_2 = 255;
+      strokeWeight(1);
+      noStroke();
+      noFill();
+      clear();
+      background(mode_2);
+      gal_count = 0;
+      loop();
+    } else if(count == 2) { // draw bright clock
+      value = 1; // draw clock
+      count += 1;
+      mode_1 = 0;
+      mode_2 = 255;
+      draw_clock_background()
+      loop();
+      sec_hand_count = 0;
+    } else if(count == 3) { // draw bright draw_galaxy_ripples
+      value = 0;
+      count = 0;
+      mode_1 = 255;
+      mode_2 = 0;
+      strokeWeight(1);
+      noStroke();
+      noFill();
+      clear();
+      background(mode_2);
+      gal_count = 0;
+      loop();
+    }
   return false;
 }
