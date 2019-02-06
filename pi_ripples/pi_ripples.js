@@ -12,7 +12,8 @@ function setup() {
   ellipse_count = 0;
   pi_digit = 0;
   num_pix_sp = 10;
-  strokeWeight(round((num_pix_sp/2)+1));
+  str_weight = round((num_pix_sp/2)+1);
+  strokeWeight(str_weight);
   subset_length = round(ellipse_max_size/round((num_pix_sp/2)+1));
 
 }
@@ -25,10 +26,16 @@ function drawPItarget() {
   background(0);
   pi_res_current = subset(pi_res, pi_digit, (pi_digit + subset_length));
   for(i = 0; i < subset_length; i++) {
+    strokeWeight(str_weight);
     stroke(map(pi_res_current[i], 0, 9, 0, 255));
     ellipse(windowWidth/2, windowHeight/2,
       ellipse_max_size - (i*round((num_pix_sp/2)+1)),
       ellipse_max_size - (i*round((num_pix_sp/2)+1)));
+  }
+  for(j = 30; j >= 1; j--){
+    strokeWeight(1);
+    stroke(0, map(j, 30, 1, 0, 255));
+    ellipse(windowWidth/2, windowHeight/2, j, j);
   }
   pi_digit++;
 }
