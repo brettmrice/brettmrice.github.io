@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html id="myButton">
   <head>
     <link rel="icon" href="gal.ico" type="image/ico" sizes="32x32">
     <title> Brett M. Rice </title>
@@ -12,8 +12,12 @@
             overflow: hidden;}
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
-    <script src="default.js"></script>
   </head>
   <body>
+    <script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+        location.href = "./clock_dark/";
+    };
+</script>
   </body>
 </html>
