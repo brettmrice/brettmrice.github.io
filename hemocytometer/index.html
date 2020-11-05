@@ -1,25 +1,41 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-<style>
-<meta charset="UTF-8">
-<style type="text/css">
-        body, html
-            {
-                margin: 0; padding: 0; height: 100%; overflow: hidden;
-            }
-
-            #content
-            {
-                position:absolute; left: 0; right: 0; bottom: 0; top: 0px; 
-            }
-</style>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="openseadragon/openseadragon.min.js"></script>
+    <style>
+        BODY {
+            padding: 0;
+            margin: 0;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            position: absolute;
+        }
+        #map {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+        }
+    </style>
 </head>
 <body>
-
-<div id="content">
-<iframe src="index.html" width=100%" height="100%" frameborder="0" title="Hemocytometer"></iframe> 
-</div>
-
+    <div id="map"></div>
+    <script type="text/javascript">
+        OpenSeadragon({
+            id: 'map'
+            , prefixUrl: 'hemocytometer_files/'
+            , tileSources: 'hemocytometer.xml'
+	    , defaultZoomLevel: 0.7
+	    , showNavigator: false 
+	    , showZoomControl: false
+	    , showHomeControl: false
+	    , showFullPageControl: false
+	    , minZoomImageRatio: 0.5
+	    , maxZoomPixelRatio: 2.0
+        });
+    </script>
 </body>
-</html> 
+</html>
