@@ -1,33 +1,347 @@
 <!DOCTYPE html>
-<html id="myButton">
-  <head>
-    <link rel="icon" href="gal.ico" type="image/ico" sizes="32x32">
-    <title> Brett M. Rice </title>
-    <meta charset="UTF-8">
-    <style>
-      body {padding:0; margin:0;}
-      html {background: url(default.jpeg) no-repeat center center fixed;
-            background-size: cover;
-            height: 100%;
-            overflow: hidden;}
-    </style>
-    <script src="../p5/p5.js"></script>
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W4KC1C2H6M"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'G-W4KC1C2H6M');
-    </script>
-  </head>
-  <body>
-    <script type="text/javascript">
-    document.getElementById("myButton").onclick = function () {
-        location.href = "./clock_dark";
-    };
-</script>
-  </body>
+<html lang="en">
+
+<head>
+  <title>Slide: Hello</title>
+  <link rel="icon" href="favicon.ico" />
+  <meta name="description" content="Myself, under the microscope" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/objective_change_anim.css">
+</head>
+
+<body data-nosnippet>
+
+<!-- BEGIN - MAIN -->
+<div id="main">
+
+  <div id="stage_area" class="flex">
+
+    <div id="content_area" 
+          class="flex">
+      <div id="content_title"
+            class="flex">
+
+        <div id="content_title_container">
+          Slide:&ensp;
+          <span id="page_slide">Brett M. Rice</span>
+          &ensp;|&ensp;
+          <span id="page_magnification">0x</span>
+        </div>    
+      </div>
+
+      <div id="microscope" class="flex">
+        <div id="table"></div>
+        <div id="bf_ph">
+          <div style="width: 100%; height: 100%;">
+            <div id="bf_view">BF</div>
+            <!-- <div id="ph_view">PH</div> -->
+          </div>
+        </div>
+        <div id="light"></div>
+        <div id="condensor">
+          <img id="condensor_light"
+                src="assets/imgs/condensor.svg">
+        </div>
+        <div id="slide_stage">
+          <img src="assets/imgs/stage.svg"
+                style="height: 100%;">
+        </div>
+        <div id="slide_active" class="flex">
+          <img src="assets/imgs/slide_h.svg"
+                style="height: 100%;
+                        filter: drop-shadow(0px 0px 1px black);
+                        display: none;">
+          <div id="slide_active_LABEL" class="flex">
+            <p>Brett M. Rice</p>
+            <p id="visit_date"></p>
+            <p id="visit_time"></p>
+          </div>
+          <div id="slide_active_SMEAR" class="flex"></div>
+        </div>
+
+        <div id="stage_cover"></div>
+
+        <div id="slide_content" class="flex">
+          <div id="content_black" class="flex">
+            <div id="content_white"></div>
+            <div id="content_view">
+
+              <div id="content_view_HELLO"
+                    class="flex">
+                <div id="content_view_HELLO_wave"
+                      class="flex">
+                  <img id="eyeL" src="assets/imgs/hi_lefteye.png">
+                  <img id="eyeR" src="assets/imgs/hi_righteye.png">
+                  <!-- <img src="hi_eyereflect.png"> -->
+                  <img src="assets/imgs/hi_noeyes.png">
+                </div>
+                <div id="content_view_HELLO_comment"
+                      class="flex"></div>
+              </div>
+
+              <div id="content_view_SOP"
+                    class="flex"
+                    style="display: none;">
+                <h1>
+                  Standard Operating Procedure
+                </h1>
+                <hr style="width: 95%;">
+                <h2>Principle</h2>
+                <p>
+                  I am a work in progress. The steps that have led me to this point are outlined below
+                </p>
+                <h2>Specimen</h2>
+                <p>
+                  Brett M. Rice
+                </p>
+                <h2>Materials</h2>
+                <p>
+                  College education <br>
+                  Bench experience in a Clinical Laboratory <br>
+                  Computer with internet access
+                </p>
+                <h2>Procedure</h2>
+                <ol>
+                  <li>
+                    Graduate from Augusta University with a Master of Health Science in Clinical Laboratory Science
+                  </li>
+                  <ul>
+                    <li>
+                      Pass the American Society for Clinical Pathology's Board of Certification Exam for Medical Laboratory Science
+                    </li>
+                  </ul>
+                  <li>Obtain a position in the Clinical Hematology, Bone Marrow, and Flow Cytometry Laboratory at [now] Wellstar MCG Health</li>
+                  <ul>
+                    <li>
+                      Obtain the required experience to pass the American Society for Clinical Pathology's Board of Certification Exam for Specialist in Hematology 
+                    </li>
+                    <li>
+                      Obtain the required experience to pass the American Society for Clinical Pathology's Board of Certification Exam for Specialist in Cytometry
+                    </li>
+                  </ul>
+                  <li>
+                    Obtain a teaching position in the Clinical Laboratory Science program at Augusta University
+                  </li>
+                  <li>
+                    Learn R, HTML, CSS, Javasript
+                  </li>
+                </ol>
+                <h2>Expected Results</h2>
+                <p>
+                  Brett M. Rice, MHS, MLS(ASCP)<sup>CM</sup>SH<sup>CM</sup>,SCYM<sup>CM</sup> <br>
+                  Associate Professor <br>
+                  Medical Laboratory Scientist <br>
+                  Web Developer
+                </p>
+                <h2>Reference</h2>
+                <p>Self</p>
+              </div>
+
+              <div id="content_view_PROJECTS"
+                    class="flex"
+                    style="display: none;">
+                <div id="content_view_PROJECTS_facepalm"
+                      class="flex">
+                  <img id="me_oops" src="assets/imgs/oops.png">
+                </div>
+                <div id="content_view_PROJECTS_comment"
+                      class="flex">
+                  My apologies...looks like I forgot to add sample to this slide. I'll remake the slide. Please check back later
+                </div>
+                </div>
+
+              <div id="content_view_CONTACT"
+                    class="flex"
+                    style="display: none;">
+                <a href="mailto: brettmrice@duck.com"
+                    target="_blank">
+                  <img id="contact_email" src="assets/imgs/email.png">
+                </a>
+                <a href="https://github.com/brettmrice"
+                    target="_blank">
+                  <img id="contact_github" src="assets/imgs/github-mark.svg">
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- BEGIN - CONTENT SLIDES TO SELECT -->
+  <div id="selection_area" class="flex">
+
+    <div id="selection_slides" class="flex">
+      <div class="flex slides"
+            style="visibility: hidden;">
+        <div id="slide_HELLO" 
+              class="flex">HELLO</div>
+      </div>
+      <div class="flex slides">
+        <div id="slide_SOP" 
+              class="flex">SOP</div>
+      </div>
+      <div class="flex slides">
+        <div id="slide_PROJECTS" 
+              class="flex">PROJECTS</div>
+      </div>
+      <div class="flex slides">
+        <div id="slide_CONTACT" 
+              class="flex">CONTACT</div>
+      </div>
+    </div>
+  </div>
+  <!-- END - CONTENT SLIDES TO SELECT -->
+
+
+  <!-- BEGIN - OBJECTIVE SELECTIONS FOR MAGNIFICATION -->  
+  <div id="objectives"
+        class="flex"
+        style="flex-direction: column;
+                position: absolute;
+                left: 0;">
+    
+    <!-- BEGIN - WIDE SCREEN -->
+    <div id="objective_selections" 
+        class="flex">
+      <div id="obj_0x"
+            class="flex obj_buttons obj_buttons_active">
+        <div>0x</div>
+        <div>DRY</div>
+      </div>
+      <div id="obj_10x"
+            class="flex obj_buttons obj_buttons_inactive">
+        <div>10x</div>
+        <div>DRY</div>
+      </div>
+      <div id="obj_50x"
+            class="flex obj_buttons obj_buttons_inactive">
+        <div>50x</div>
+        <div>OIL</div>
+      </div>
+      <div id="obj_100x"
+            class="flex obj_buttons obj_buttons_inactive">
+        <div>100x</div>
+        <div>OIL</div>
+      </div>
+    </div>
+    <!-- END - WIDE SCREEN -->
+
+    <!-- BEGIN - NARROW SCREEN -->
+    <div id="obj_btns_view_container" 
+          class="flex obj_btns_view_container_hide">
+      <div class="flex obj_buttons_inactive"></div>
+    </div>
+    <!-- END - NARROW SCREEN -->
+
+  </div>
+  <!-- END - OBJECTIVE SELECTIONS FOR MAGNIFICATION -->  
+
+    
+  <!-- BEGIN - MICROSCOPE CONTROLS - LIGHT, FOCUS, SLIDE POSITION -->
+  <div id="controls"
+        class="flex">
+
+    <!-- LIGHT -->
+    <div id="cntrl_light_container"
+          class="flex cntrl_container"
+          title="Drag to adjust microscope light&#13;Double click to reset">
+      <div id="cntrl_light_bar"
+            class="cntrl_slide_bar"></div>
+      <div id="cntrl_light_slide"
+            class="flex cntrl_slide_button">
+      </div>
+      <div id="cntrl_light_js"></div>
+    </div>
+
+    <!-- FOCUS -->
+    <div id="cntrl_focus_container"
+          class="flex cntrl_container"
+          title="Drag to adjust microscope focus&#13;Double click to reset">
+      <div id="cntrl_focus_bar"
+            class="cntrl_slide_bar"></div>
+      <div id="cntrl_focus_slide"
+            class="flex cntrl_slide_button">
+      </div>
+      <div id="cntrl_focus_js"></div>
+    </div>
+
+    <!-- MOVE UP/DOWN -->
+    <div id="cntrl_moveUD_container"
+          class="flex cntrl_container"
+          title="Drag to adjust vertical position&#13;Double click to reset">
+      <div id="cntrl_moveUD_bar"
+            class="cntrl_slide_bar"></div>
+      <div id="cntrl_moveUD_slide"
+            class="flex cntrl_slide_button">
+      </div>
+      <div id="cntrl_moveUD_js"></div>
+    </div>
+
+    <!-- MOVE LEFT/RIGHT -->
+    <div id="cntrl_moveLR_container"
+          class="flex cntrl_container"
+          title="Drag to adjust horizontal position&#13;Double click to reset">
+      <div id="cntrl_moveLR_bar"
+            class="cntrl_slide_bar"></div>
+      <div id="cntrl_moveLR_slide"
+            class="flex cntrl_slide_button">
+      </div>
+      <div id="cntrl_moveLR_js"></div>
+    </div>
+
+  </div>
+  <!-- END - MICROSCOPE CONTROLS - LIGHT, FOCUS, SLIDE POSITION -->
+
+  <!-- BEGIN - MICROSCOPE CONTROLS - NARROW SCREEN -->
+  <div id="cntrl_btns_view_container" 
+          class="flex cntrl_btns_view_container_hide">
+    <div>
+      <div>
+        <img src="assets/imgs/control_light_slide.svg" style="width: 40%;">
+        <img src="assets/imgs/control_focus_slide.svg" style="width: 40%;">
+      </div>
+      <div>
+        <img src="assets/imgs/control_moveUD_slide.svg" style="width: 30%;">
+        <img src="assets/imgs/control_moveLR_slide.svg" style="width: 30%;">
+      </div>
+    </div>
+  </div>
+  <!-- END - MICROSCOPE CONTROLS - NARROW SCREEN -->
+
+
+
+  <!-- BEGIN - MICROSCOPE FULLSCREEN OBJECTIVE CHANGE -->    
+  <div id="objectives_container" class="flex">
+    <div id="obj_location" class="flex">
+      <div id="obj_anim_rot" class="flex">
+        <div id="obj_img"></div>
+      </div>
+    </div>
+    <div id="obj_zoom"></div>
+  </div>
+  <!-- END - MICROSCOPE FULLSCREEN OBJECTIVE CHANGE -->    
+
+</div>
+<!-- END - MAIN -->
+
+
+<!-- SCREEN TOO SMALL -->
+<div id="screen_to_small">
+  <img src="assets/imgs/stop.png">
+</div>
+
+</body>
+
+<script src="assets/miscellaneous.js"></script>
+<script src="assets/microscope_controls.js"></script>
+<script src="assets/objective_change.js"></script>
+<script src="assets/comments.js"></script>
+<script src="assets/comments_view.js"></script>
+
 </html>
