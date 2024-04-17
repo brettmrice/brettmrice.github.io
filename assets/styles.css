@@ -489,8 +489,8 @@ html, body {
   width: 5em;
   align-self: flex-start;
 }
-.slides:hover,
-.slides:active {
+.slides:hover
+/* .slides:active */ {
   transform: translateY(-10px);
 }
 .anim_slides_shrink_grow {
@@ -551,7 +551,7 @@ html, body {
   width: 100%;
   height: 33%;
   align-self: flex-start;
-  font-size: min(1.75vw, 1.75vh);
+  font-size: min(1.7vw, 1.7vh);
   flex-direction: column;
   font-family: 'handwritten';
 }

@@ -12,6 +12,9 @@ function fun_adjust_light_container_details() {
 function fun_adjust_light(e) {
   if(adjust_light) {
     mY = e.clientY;
+    if(typeof(mY) === 'undefined') {
+      mY = e.touches[0].clientY;
+    }
     moveY = mY - button_top_orig;
     if(mY >= bar_top && mY <= bar_bottom) {
       cntrl_light_slide.style.transform = 'translateY(' + moveY + 'px)';
@@ -37,23 +40,33 @@ function fun_adjust_light(e) {
   }
 }
 adjust_light = false;
-cntrl_light_slide.parentElement.addEventListener('mousedown', e => {
+cntrl_light_js.addEventListener('mousedown', e => {
   adjust_light = true;
   fun_adjust_light_container_details();
 });
-cntrl_light_slide.parentElement.addEventListener('mousemove', e => {
+cntrl_light_js.addEventListener('mousemove', e => {
   fun_adjust_light(e);
 });
-cntrl_light_slide.parentElement.addEventListener('mouseup', e => {
+cntrl_light_js.addEventListener('touchmove', e => {
+  adjust_light = true; 
+  fun_adjust_light_container_details();
+  fun_adjust_light(e);
+});
+doubleTap_light = false;
+cntrl_light_js.addEventListener('touchend', e => {
+  doubleTap_light = true;
+});
+cntrl_light_js.addEventListener('mouseup', e => {
   adjust_light = false;
 });
-cntrl_light_slide.parentElement.addEventListener('mouseout', e => {
+cntrl_light_js.addEventListener('mouseout', e => {
   adjust_light = false;
 });
 /* RESET LIGHT TO DEFAULT */
 pos_light_slide = 0;
-cntrl_light_slide.parentElement.addEventListener('click', e => {
-  if(e.detail === 2) {
+cntrl_light_js.addEventListener('click', e => {
+  e.preventDefault();
+  if(e.detail === 2 || doubleTap_light) {
     cntrl_light_slide.style.transform = 'translateY(0)';
     light.style.opacity = 0.5;
     pos_light_slide = 0;
@@ -61,6 +74,7 @@ cntrl_light_slide.parentElement.addEventListener('click', e => {
     content_white.style.opacity = 1;
     content_white.style.backgroundColor = 'rgba(255,255,255)';
   }
+  doubleTap_light = false;
 });
 window.addEventListener('resize', () => {
   new_light_bar_height = cntrl_light_bar.offsetHeight/2 * pos_light_slide;
@@ -79,6 +93,9 @@ function fun_adjust_focus_container_details() {
 function fun_adjust_focus(e) {
   if(adjust_focus) {
     mY = e.clientY;
+    if(typeof(mY) === 'undefined') {
+      mY = e.touches[0].clientY;
+    }
     moveY = mY - button_top_orig;
     if(mY >= bar_top && mY <= bar_bottom) {
       cntrl_focus_slide.style.transform = 'translateY(' + moveY + 'px)';
@@ -89,27 +106,38 @@ function fun_adjust_focus(e) {
   }
 }
 adjust_focus = false;
-cntrl_focus_slide.parentElement.addEventListener('mousedown', e => {
+cntrl_focus_js.addEventListener('mousedown', e => {
   adjust_focus = true;
   fun_adjust_focus_container_details();
 });
-cntrl_focus_slide.parentElement.addEventListener('mousemove', e => {
+cntrl_focus_js.addEventListener('mousemove', e => {
   fun_adjust_focus(e);
 });
-cntrl_focus_slide.parentElement.addEventListener('mouseup', e => {
+cntrl_focus_js.addEventListener('touchmove', e => {
+  adjust_focus = true; 
+  fun_adjust_focus_container_details();
+  fun_adjust_focus(e);
+});
+doubleTap_focus = false;
+cntrl_focus_js.addEventListener('touchend', e => {
+  doubleTap_focus = true;
+});
+cntrl_focus_js.addEventListener('mouseup', e => {
   adjust_focus = false;
 });
-cntrl_focus_slide.parentElement.addEventListener('mouseout', e => {
+cntrl_focus_js.addEventListener('mouseout', e => {
   adjust_focus = false;
 });
 /* RESET FOCUS TO DEFAULT */
 pos_focus_slide = 0;
-cntrl_focus_slide.parentElement.addEventListener('click', e => {
-  if(e.detail === 2) {
+cntrl_focus_js.addEventListener('click', e => {
+  e.preventDefault();
+  if(e.detail === 2 || doubleTap_focus) {
     cntrl_focus_slide.style.transform = 'translateY(0)';
     content_view.style.filter = 'blur(0px)';
     pos_focus_slide = 0;
   }
+  doubleTap_focus = false;
 });
 window.addEventListener('resize', () => {
   new_focus_bar_height = cntrl_focus_bar.offsetHeight/2 * pos_focus_slide;
@@ -130,6 +158,9 @@ slide_transX_change = slide_transX;
 function fun_adjust_moveUD(e) {
   if(adjust_moveUD) {
     mY = e.clientY;
+    if(typeof(mY) === 'undefined') {
+      mY = e.touches[0].clientY;
+    }
     moveY = mY - button_top_orig;
     if(mY >= bar_top && mY <= bar_bottom) {
       cntrl_moveUD_slide.style.transform = 'translateY(' + moveY + 'px)';
@@ -146,29 +177,40 @@ function fun_adjust_moveUD(e) {
   }
 }
 adjust_moveUD = false;
-cntrl_moveUD_slide.parentElement.addEventListener('mousedown', e => {
+cntrl_moveUD_js.addEventListener('mousedown', e => {
   adjust_moveUD = true;
   fun_adjust_moveUD_container_details();
 });
-cntrl_moveUD_slide.parentElement.addEventListener('mousemove', e => {
+cntrl_moveUD_js.addEventListener('mousemove', e => {
   fun_adjust_moveUD(e);
 });
-cntrl_moveUD_slide.parentElement.addEventListener('mouseup', e => {
+cntrl_moveUD_js.addEventListener('touchmove', e => {
+  adjust_moveUD = true; 
+  fun_adjust_moveUD_container_details();
+  fun_adjust_moveUD(e);
+});
+doubleTap_moveUD = false;
+cntrl_moveUD_js.addEventListener('touchend', e => {
+  doubleTap_moveUD = true;
+});
+cntrl_moveUD_js.addEventListener('mouseup', e => {
   adjust_moveUD = false;
 });
-cntrl_moveUD_slide.parentElement.addEventListener('mouseout', e => {
+cntrl_moveUD_js.addEventListener('mouseout', e => {
   adjust_moveUD = false;
 });
 /* RESET FOCUS TO DEFAULT */
 pos_moveUD_slide = 0;
-cntrl_moveUD_slide.parentElement.addEventListener('click', e => {
-  if(e.detail === 2) {
+cntrl_moveUD_js.addEventListener('click', e => {
+  e.preventDefault();
+  if(e.detail === 2 || doubleTap_moveUD) {
     cntrl_moveUD_slide.style.transform = 'translateY(0)';
     pos_moveUD_slide = 0;
     slide_transX_change = slide_transX;
     slide_active.style.transform = 'rotate(90deg) ' + slide_transY_change + ' ' + slide_transX_change;
     content_view.style.transform = 'translateY(0)';
   }
+  doubleTap_moveUD = false;
 });
 window.addEventListener('resize', () => {
   new_moveUD_bar_height = cntrl_moveUD_bar.offsetHeight/2 * pos_moveUD_slide;
@@ -189,6 +231,9 @@ slide_transY_change = slide_transY;
 function fun_adjust_moveLR(e) {
   if(adjust_moveLR) {
     mY = e.clientY;
+    if(typeof(mY) === 'undefined') {
+      mY = e.touches[0].clientY;
+    }
     moveY = mY - button_top_orig;
     if(mY >= bar_top && mY <= bar_bottom) {
       cntrl_moveLR_slide.style.transform = 'translateY(' + moveY + 'px)';
@@ -214,23 +259,33 @@ function fun_adjust_moveLR(e) {
   }
 }
 adjust_moveLR = false;
-cntrl_moveLR_slide.parentElement.addEventListener('mousedown', e => {
+cntrl_moveLR_js.addEventListener('mousedown', e => {
   adjust_moveLR = true;
   fun_adjust_moveLR_container_details();
 });
-cntrl_moveLR_slide.parentElement.addEventListener('mousemove', e => {
+cntrl_moveLR_js.addEventListener('mousemove', e => {
   fun_adjust_moveLR(e);
 });
-cntrl_moveLR_slide.parentElement.addEventListener('mouseup', e => {
+cntrl_moveLR_js.addEventListener('touchmove', e => {
+  adjust_moveLR = true; 
+  fun_adjust_moveLR_container_details();
+  fun_adjust_moveLR(e);
+});
+doubleTap_moveLR = false;
+cntrl_moveLR_js.addEventListener('touchend', e => {
+  doubleTap_moveLR = true;
+});
+cntrl_moveLR_js.addEventListener('mouseup', e => {
   adjust_moveLR = false;
 });
-cntrl_moveLR_slide.parentElement.addEventListener('mouseout', e => {
+cntrl_moveLR_js.addEventListener('mouseout', e => {
   adjust_moveLR = false;
 });
 /* RESET FOCUS TO DEFAULT */
 pos_moveLR_slide = 0;
-cntrl_moveLR_slide.parentElement.addEventListener('click', e => {
-  if(e.detail === 2) {
+cntrl_moveLR_js.addEventListener('click', e => {
+  e.preventDefault();
+  if(e.detail === 2 || doubleTap_moveLR) {
     cntrl_moveLR_slide.style.transform = 'translateY(0)';
     pos_moveLR_slide = 0;
     content_view.style.letterSpacing = '';
@@ -238,6 +293,7 @@ cntrl_moveLR_slide.parentElement.addEventListener('click', e => {
     slide_transY_change = slide_transY;
     slide_active.style.transform = 'rotate(90deg) ' + slide_transY_change + ' ' + slide_transX_change;
   }
+  doubleTap_moveLR = false;
 });
 window.addEventListener('resize', () => {
   new_moveLR_bar_height = cntrl_moveLR_bar.offsetHeight/2 * pos_moveLR_slide;
