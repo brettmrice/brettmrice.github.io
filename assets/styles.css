@@ -329,7 +329,7 @@ html, body {
   width: 95%;
   overflow-x: hidden;
   overflow-y: auto;
-  clip-path: xywh(-2.5% -2.5% 105% 105%);
+  /* clip-path: xywh(-2.5% -2.5% 105% 105%); */
 }
 
 /* CONTENT VIEW HELLO */
