@@ -4,9 +4,9 @@
 
 <head>
   <title>Slide: Hello</title>
-  <link rel="icon" href="favicon.ico" />
-  <meta name="description" content="Myself, under the microscope" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="favicon.ico">
+  <meta name="description" content="Myself, under the microscope">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="assets/styles.css">
   <link rel="stylesheet" href="assets/objective_change_anim.css">
 </head>
@@ -42,17 +42,20 @@
         <div id="light"></div>
         <div id="condensor">
           <img id="condensor_light"
-                src="assets/imgs/condensor.svg">
+                src="assets/imgs/condensor.svg"
+                alt="Condensor">
         </div>
         <div id="slide_stage">
           <img src="assets/imgs/stage.svg"
-                style="height: 100%;">
+                style="height: 100%;"
+                alt="Stage">
         </div>
         <div id="slide_active" class="flex">
           <img src="assets/imgs/slide_h.svg"
                 style="height: 100%;
                         filter: drop-shadow(0px 0px 1px black);
-                        display: none;">
+                        display: none;"
+                alt="Slide">
           <div id="slide_active_LABEL" class="flex">
             <p>Brett M. Rice</p>
             <p id="visit_date"></p>
@@ -72,10 +75,13 @@
                     class="flex">
                 <div id="content_view_HELLO_wave"
                       class="flex">
-                  <img id="eyeL" src="assets/imgs/hi_lefteye.png">
-                  <img id="eyeR" src="assets/imgs/hi_righteye.png">
+                  <img id="eyeL" src="assets/imgs/hi_lefteye.png"
+                        alt="Left eye">
+                  <img id="eyeR" src="assets/imgs/hi_righteye.png"
+                        alt="Right eye">
                   <!-- <img src="hi_eyereflect.png"> -->
-                  <img src="assets/imgs/hi_noeyes.png">
+                  <img src="assets/imgs/hi_noeyes.png"
+                        alt="Eyeless">
                 </div>
                 <div id="content_view_HELLO_comment"
                       class="flex"></div>
@@ -106,24 +112,29 @@
                 <ol>
                   <li>
                     Graduate from Augusta University with a Master of Health Science in Clinical Laboratory Science
+                    <ul>
+                      <li>
+                        Pass the American Society for Clinical Pathology's Board of Certification Exam for Medical Laboratory Science
+                      </li>
+                    </ul>
                   </li>
-                  <ul>
-                    <li>
-                      Pass the American Society for Clinical Pathology's Board of Certification Exam for Medical Laboratory Science
-                    </li>
-                  </ul>
-                  <li>Obtain a position in the Clinical Hematology, Bone Marrow, and Flow Cytometry Laboratory at [now] Wellstar MCG Health</li>
-                  <ul>
-                    <li>
-                      Obtain the required experience to pass the American Society for Clinical Pathology's Board of Certification Exam for Specialist in Hematology 
-                    </li>
-                    <li>
-                      Obtain the required experience to pass the American Society for Clinical Pathology's Board of Certification Exam for Specialist in Cytometry
-                    </li>
-                  </ul>
+                    
+                  <li>
+                    Obtain a position in the Clinical Hematology, Bone Marrow, and Flow Cytometry Laboratory at [now] Wellstar MCG Health
+                    <ul>
+                      <li>
+                        Obtain the required experience to pass the American Society for Clinical Pathology's Board of Certification Exam for Specialist in Hematology 
+                      </li>
+                      <li>
+                        Obtain the required experience to pass the American Society for Clinical Pathology's Board of Certification Exam for Specialist in Cytometry
+                      </li>
+                    </ul>
+                  </li>
+                  
                   <li>
                     Obtain a teaching position in the Clinical Laboratory Science program at Augusta University
                   </li>
+                  
                   <li>
                     Learn R, HTML, CSS, Javasript
                   </li>
@@ -144,7 +155,8 @@
                     style="display: none;">
                 <div id="content_view_PROJECTS_facepalm"
                       class="flex">
-                  <img id="me_oops" src="assets/imgs/oops.png">
+                  <img id="me_oops" src="assets/imgs/oops.png"
+                        alt="Face palm">
                 </div>
                 <div id="content_view_PROJECTS_comment"
                       class="flex">
@@ -155,13 +167,15 @@
               <div id="content_view_CONTACT"
                     class="flex"
                     style="display: none;">
-                <a href="mailto: brettmrice@duck.com"
+                <a href="mailto:brettmrice@duck.com"
                     target="_blank">
-                  <img id="contact_email" src="assets/imgs/email.png">
+                  <img id="contact_email" src="assets/imgs/email.png"
+                        alt="Contact via email">
                 </a>
                 <a href="https://github.com/brettmrice"
                     target="_blank">
-                  <img id="contact_github" src="assets/imgs/github-mark.svg">
+                  <img id="contact_github" src="assets/imgs/github-mark.svg"
+                        alt="Contact via github">
                 </a>
               </div>
 
@@ -250,7 +264,7 @@
     <!-- LIGHT -->
     <div id="cntrl_light_container"
           class="flex cntrl_container"
-          title="Drag to adjust microscope light&#13;Double click to reset">
+          title="Drag to adjust microscope light&#10;Double click to reset">
       <div id="cntrl_light_bar"
             class="cntrl_slide_bar"></div>
       <div id="cntrl_light_slide"
@@ -262,7 +276,7 @@
     <!-- FOCUS -->
     <div id="cntrl_focus_container"
           class="flex cntrl_container"
-          title="Drag to adjust microscope focus&#13;Double click to reset">
+          title="Drag to adjust microscope focus&#10;Double click to reset">
       <div id="cntrl_focus_bar"
             class="cntrl_slide_bar"></div>
       <div id="cntrl_focus_slide"
@@ -274,7 +288,7 @@
     <!-- MOVE UP/DOWN -->
     <div id="cntrl_moveUD_container"
           class="flex cntrl_container"
-          title="Drag to adjust vertical position&#13;Double click to reset">
+          title="Drag to adjust vertical position&#10;Double click to reset">
       <div id="cntrl_moveUD_bar"
             class="cntrl_slide_bar"></div>
       <div id="cntrl_moveUD_slide"
@@ -286,7 +300,7 @@
     <!-- MOVE LEFT/RIGHT -->
     <div id="cntrl_moveLR_container"
           class="flex cntrl_container"
-          title="Drag to adjust horizontal position&#13;Double click to reset">
+          title="Drag to adjust horizontal position&#10;Double click to reset">
       <div id="cntrl_moveLR_bar"
             class="cntrl_slide_bar"></div>
       <div id="cntrl_moveLR_slide"
@@ -303,12 +317,16 @@
           class="flex cntrl_btns_view_container_hide">
     <div>
       <div>
-        <img src="assets/imgs/control_light_slide.svg" style="width: 40%;">
-        <img src="assets/imgs/control_focus_slide.svg" style="width: 40%;">
+        <img src="assets/imgs/control_light_slide.svg" style="width: 40%;"
+              alt="Microscope light control">
+        <img src="assets/imgs/control_focus_slide.svg" style="width: 40%;"
+              alt="Microscope focus control">
       </div>
       <div>
-        <img src="assets/imgs/control_moveUD_slide.svg" style="width: 30%;">
-        <img src="assets/imgs/control_moveLR_slide.svg" style="width: 30%;">
+        <img src="assets/imgs/control_moveUD_slide.svg" style="width: 30%;"
+              alt="Microscope stage north/south control">
+        <img src="assets/imgs/control_moveLR_slide.svg" style="width: 30%;"
+              alt="Microscope stage west/east control">
       </div>
     </div>
   </div>
@@ -333,15 +351,16 @@
 
 <!-- SCREEN TOO SMALL -->
 <div id="screen_to_small">
-  <img src="assets/imgs/stop.png">
+  <img src="assets/imgs/stop.png"
+        alt="Screen too small">
 </div>
-
-</body>
 
 <script src="assets/miscellaneous.js"></script>
 <script src="assets/microscope_controls.js"></script>
 <script src="assets/objective_change.js"></script>
 <script src="assets/comments.js"></script>
 <script src="assets/comments_view.js"></script>
+
+</body>
 
 </html>
