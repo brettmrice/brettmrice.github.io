@@ -16,6 +16,13 @@ function changeObj() {
     return;
   }
 
+  // SHOW ADDITIONAL SLIDES AFTER INITIAL OBJECTIVE SELECTION
+  if(selection_area.classList.toString().includes('hide_selection_area')) {
+    setTimeout(() => {
+      selection_area.classList.remove('hide_selection_area');
+    }, 750);
+  }
+
   // ANIMATE CLICK AREAS MOVEMENT WHEN CLICKED
 
   if(typeof obj_cont_timeout !== "undefined") {
